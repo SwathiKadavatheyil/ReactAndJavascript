@@ -1,0 +1,43 @@
+.heading{
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .active{
+    background-color: orange;
+  }
+  .navBar{
+    background-color: rgb(60, 58, 58);
+  }
+  a{
+    color: beige;
+  }
+  .fa-university{
+    color: orange;
+  }
+  .imgAboutDiv{
+    height:300px;
+    width:100%;
+  } 
+  
+  p{
+    text-align: justify;
+  }
+  .imgAbout{
+    width: 100%;
+    height: 300px;
+  }
+  .regLabels{
+    font-weight: bold;
+  }
+  
+  .btn{
+    background-color: orange;
+    border-radius: 20px;
+    border-color: orange;
+  }
+  
+  .search_a{
+    color: blue;
+  }

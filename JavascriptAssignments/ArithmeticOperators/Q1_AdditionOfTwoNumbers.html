@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Addition of Two Numbers</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Addition of Two Numbers</h4></div>
+        <div>Number 1: <input type="text" id="a"></div>
+        <div>Number 2: <input type="text" id="b"></div>
+        <div><button onclick="addition()" >Add</button></div>
+        <div>Result: <input type="text" id="result"></div>  
+    </body>
+</html>
+
+<script>
+
+    function addition(){
+        var a=document.getElementById("a").value;
+        var b=document.getElementById("b").value;
+
+        var c=Number(a)+Number(b);
+
+        document.getElementById("result").value=c;
+
+    }
+    
+</script>

@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Arrays</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Armstrong Numbers</h4></div>
+        <div>Check console for output..</div>
+    </body>
+</html>
+<script>
+    var inputArray=[221,453,153,3434,1634];
+    var armsArray=[];
+    
+    console.log("Given Array: ");
+    console.log(inputArray);
+    console.log("Armstrong Numbers: ")
+
+
+    for(var i=0;i<inputArray.length;i++){
+
+        var armSum=0;
+        var tempArray=inputArray[i].toString().split(''); //converting individual numbers into array
+
+        //finding sum of its own digits raised to the number of digits 
+        for(var j=0;j<tempArray.length;j++){
+            var tempPower=1;
+            for(var a=0;a<tempArray.length;a++){
+                tempPower=tempPower*tempArray[j];
+            }
+            armSum=armSum+tempPower;
+        }
+
+        if(inputArray[i]==armSum){
+            armsArray.push(inputArray[i]);
+        }
+    }
+
+    console.log(armsArray);
+    
+</script>

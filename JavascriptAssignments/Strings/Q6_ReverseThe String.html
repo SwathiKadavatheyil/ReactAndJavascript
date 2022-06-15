@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Reverse a String</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Reverse of a String</h4></div>
+        <div>
+            <span>Enter the string: </span>
+            <span><input id="inputString" type="text"></span>
+        </div>
+        <div>
+            <button onclick="reverseString()">Reverse the String</button>
+        </div>
+        <div>
+            Reverse String: <span id="result"></span>
+        </div>
+    </body>
+</html>
+<script>
+    function reverseString(){
+        var inputString=document.getElementById("inputString").value;
+        var resultArray = inputString.split("");
+        var result=resultArray.reverse();
+
+        document.getElementById("result").innerHTML=result.join("");
+    }
+</script>

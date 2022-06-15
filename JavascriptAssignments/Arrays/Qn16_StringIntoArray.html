@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Arrays</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>String into Array</h4></div>
+        <div>Check console for output..</div>
+    </body>
+</html>
+<script>
+    var inputString1=34531;
+    var inputString2="salman";
+
+    console.log("Given String is "+inputString1);
+    var arrayWithString=inputString1.toString().split('');
+    var resultArray=[];
+    for(var i=0;i<arrayWithString.length;i++){
+        resultArray.push(Number(arrayWithString[i]));
+    }
+    console.log("Converted to array as: ");
+    console.log(resultArray);
+
+    console.log("Given String is "+inputString2);
+    console.log("Converted to array as: ");
+    console.log(inputString2.split(''));
+</script>

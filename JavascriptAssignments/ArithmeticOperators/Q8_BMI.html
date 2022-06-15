@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>BMI</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Body Mass Index</h4></div>
+        <div>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Mass</th>
+                    <th>Height</th>
+                    <th>BMI</th>
+                </tr>
+                <tr>
+                    <td>Harry</td>
+                    <td><input id="harryMass" placeholder="Enter Harry's Mass"></td>
+                    <td><input id="harryHeight" placeholder="Enter Harry's Height"></td>
+                    <td><span id="harryBmi"></span></td>
+                </tr>
+                <tr>
+                    <td>Salman</td>
+                    <td><input id="salmanMass" placeholder="Enter Salman's Mass"></td>
+                    <td><input id="salmanHeight" placeholder="Enter Salman's Height"></td>
+                    <td><span id="salmanBmi"></span></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <button onclick="compare()">Compare BMI</button>
+        </div>
+        <div><p id="result"></p></div>
+    </body>
+</html>
+
+<script>
+
+    function compare(){
+        var harryMass=Number(document.getElementById("harryMass").value);
+        var harryHeight=Number(document.getElementById("harryHeight").value);
+
+        var salmanMass=Number(document.getElementById("salmanMass").value);
+        var salmanHeight=Number(document.getElementById("salmanHeight").value);
+
+        var harryBmi=harryMass/(harryHeight*harryHeight);
+        var salmanBmi=salmanMass/(salmanHeight*salmanHeight);
+
+        document.getElementById("harryBmi").innerHTML=harryBmi;
+        document.getElementById("salmanBmi").innerHTML=salmanBmi;
+
+        var x = Boolean(harryBmi>salmanBmi);
+
+        console.log("Is Harry's BMI higher than Salman's BMI? "+x);
+        document.getElementById("result").innerHTML="Is Harry's BMI higher than Salman's BMI? "+x;
+    }
+
+</script>

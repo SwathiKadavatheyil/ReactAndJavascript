@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Odd Or Even</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Odd or Even</h4></div>
+        <div>Number: <input type="text" id="a"></div>
+        <div><button onclick="oddEven()" >Check Odd or Even</button></div>
+        <div>Result: <span id="result"></span></div>
+    </body>
+</html>
+
+<script>
+
+    function oddEven(){
+        var a=Number(document.getElementById("a").value);
+
+        if(a%2){
+            document.getElementById("result").innerHTML="Number is Odd";
+        }
+        else{
+            document.getElementById("result").innerHTML="Number is Even";
+        }
+        
+
+    }
+    
+</script>

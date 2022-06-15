@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Salman's Bill and Tips</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Salman's Bill and Tips</h4></div>
+        <table border="1px">
+            <tr>
+                <th>Restarant</th>
+                <th>Bill Amount</th>
+                <th>Tip</th>
+                <th>Total Amount(Bill+Tip)</th>
+            </tr>
+            <tr>
+                <td>Restaurant 1</td>
+                <td><input id="bill1" type="text"></td>
+                <td><span id="tip1"></span></td>
+                <td><span id="total1"></span></td>
+            </tr>
+            <tr>
+                <td>Restaurant 2</td>
+                <td><input id="bill2" type="text"></td>
+                <td><span id="tip2"></span></td>
+                <td><span id="total2"></span></td>
+            </tr>
+            <tr>
+                <td>Restaurant 3</td>
+                <td><input id="bill3" type="text"></td>
+                <td><span id="tip3"></span></td>
+                <td><span id="total3"></span></td>
+            </tr>
+        </table>
+        <div>
+            <button onclick="calculate()">Calculate tip and total amount paid</button>
+        </div>
+    </body>
+</html>
+<script>
+    function calculate(){
+        var bill1=Number(document.getElementById("bill1").value);
+        var bill2=Number(document.getElementById("bill2").value);
+        var bill3=Number(document.getElementById("bill3").value);
+        var billArray=[bill1,bill2,bill3];
+
+        var tipArray=[];
+
+        for(var i=0;i<billArray.length;i++){
+            if(billArray[i]<50){
+                tipArray.push(billArray[i]*0.2);
+            }
+            else if(50>=billArray[i]<=200){
+                tipArray.push(billArray[i]*0.15);
+            }
+            else if(billArray[i]>200){
+                tipArray.push(billArray[i]*0.10);
+            }
+        }
+
+        var totalArray=[];
+
+        for(var i=0;i<billArray.length;i++){
+            totalArray.push(billArray[i]+tipArray[i]);
+        }
+
+        console.log("tip array: ");
+        console.log(tipArray);
+        console.log("Total amount array: ");
+        console.log(totalArray);
+
+        document.getElementById("tip1").innerHTML=tipArray[0].toString();
+        document.getElementById("tip2").innerHTML=tipArray[1].toString();
+        document.getElementById("tip3").innerHTML=tipArray[2].toString();
+        document.getElementById("total1").innerHTML=totalArray[0].toString();
+        document.getElementById("total2").innerHTML=totalArray[1].toString();
+        document.getElementById("total3").innerHTML=totalArray[2].toString();
+    }
+</script>

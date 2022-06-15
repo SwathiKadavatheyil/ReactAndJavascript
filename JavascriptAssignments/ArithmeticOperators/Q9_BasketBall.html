@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>Basket Ball</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Basket Ball Game</h4></div>
+        <div>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Match 1 Score</th>
+                    <th>Match 2 Score</th>
+                    <th>Match 3 Score</th>
+                    <th>Average Score</th>
+                </tr>
+                <tr>
+                    <td>Salman</td>
+                    <td><input id="salmanScoreOne"></td>
+                    <td><input id="salmanScoreTwo"></td>
+                    <td><input id="salmanScoreThree"></td>
+                    <td><span id="averageSalman"></span></td>
+                </tr>
+                <tr>
+                    <td>Mike</td>
+                    <td><input id="mikeScoreOne"></td>
+                    <td><input id="mikeScoreTwo"></td>
+                    <td><input id="mikeScoreThree"></td>
+                    <td><span id="averageMike"></span></td>
+                </tr>
+                <tr>
+                    <td>Mary</td>
+                    <td><input id="maryScoreOne"></td>
+                    <td><input id="maryScoreTwo"></td>
+                    <td><input id="maryScoreThree"></td>
+                    <td><span id="averageMary"></span></td>
+                </tr>
+            </table>
+            
+        </div>
+        <div>
+            <span><button onclick="calculate()">Calculate Average Score</button></span>
+            <span><button onclick="winnerOfTwo()">Find winner between Salman and Mike</button></span>
+            <span><button onclick="winnerOfThree()">Find winner between all the three</button></span>       
+        </div>
+        <div>
+            <span id="result"></span>
+        </div>
+    </body>
+</html>
+<script>
+    function calculate(){
+        
+        var averageSalman = (Number(document.getElementById("salmanScoreOne").value)+Number(document.getElementById("salmanScoreTwo").value)+Number(document.getElementById("salmanScoreThree").value))/3;
+        var averageMike = (Number(document.getElementById("mikeScoreOne").value)+Number(document.getElementById("mikeScoreTwo").value)+Number(document.getElementById("mikeScoreThree").value))/3;
+        var averageMary = (Number(document.getElementById("maryScoreOne").value)+Number(document.getElementById("maryScoreTwo").value)+Number(document.getElementById("maryScoreThree").value))/3;
+        
+        document.getElementById("averageSalman").innerHTML=averageSalman;
+        document.getElementById("averageMike").innerHTML=averageMike;
+        document.getElementById("averageMary").innerHTML=averageMary;
+    }
+
+    function winnerOfTwo(){
+
+        var averageSalman = (Number(document.getElementById("salmanScoreOne").value)+Number(document.getElementById("salmanScoreTwo").value)+Number(document.getElementById("salmanScoreThree").value))/3;
+        var averageMike = (Number(document.getElementById("mikeScoreOne").value)+Number(document.getElementById("mikeScoreTwo").value)+Number(document.getElementById("mikeScoreThree").value))/3;
+        var averageMary = (Number(document.getElementById("maryScoreOne").value)+Number(document.getElementById("maryScoreTwo").value)+Number(document.getElementById("maryScoreThree").value))/3;
+        
+        if(averageSalman>averageMike)   
+            document.getElementById("result").innerHTML="Winner is Salman";
+        else if(averageMike>averageSalman)
+            document.getElementById("result").innerHTML="Winner is Mike";
+        else
+            document.getElementById("result").innerHTML="Tie between Salman and Mike!!";
+    }
+
+    function winnerOfThree(){
+
+        var averageSalman = (Number(document.getElementById("salmanScoreOne").value)+Number(document.getElementById("salmanScoreTwo").value)+Number(document.getElementById("salmanScoreThree").value))/3;
+        var averageMike = (Number(document.getElementById("mikeScoreOne").value)+Number(document.getElementById("mikeScoreTwo").value)+Number(document.getElementById("mikeScoreThree").value))/3;
+        var averageMary = (Number(document.getElementById("maryScoreOne").value)+Number(document.getElementById("maryScoreTwo").value)+Number(document.getElementById("maryScoreThree").value))/3;
+        
+        if(averageSalman>averageMike && averageSalman>averageMary)
+            document.getElementById("result").innerHTML="Winner is Salman";
+        if(averageMary>averageMike&&averageMary>averageSalman)
+            document.getElementById("result").innerHTML="Winner is Mary";
+        if(averageMike>averageMary&&averageMike>averageSalman)
+            document.getElementById("result").innerHTML="Winner is Mike";
+
+        if(averageSalman>averageMike&&averageSalman==averageMary)
+            document.getElementById("result").innerHTML="Tie between Salman and Mary!!";
+        if(averageSalman>averageMary&&averageSalman==averageMike)
+            document.getElementById("result").innerHTML="Tie between Salman and Mike!!";
+        if(averageMary>averageSalman&&averageMary==averageMike)
+            document.getElementById("result").innerHTML="Tie between Mary and Mike";
+    }
+</script>

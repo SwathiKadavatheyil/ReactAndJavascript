@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Finding Vowels</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Finding Vowels in a String</h4></div>
+        <div>
+            Enter the string: <span><input id="inputString" type="text"></span>
+        </div>
+        <div>
+            <button onclick="findVowels()">Find the vowels</button>
+        </div>
+        <div>
+            Vowels in the string are: <span id="result1"></span>
+        </div>
+        <div>
+            Unique Vowels in the string are: <span id="result"></span>
+        </div>
+    </body>
+</html>
+<script>
+    function findVowels(){
+        var inputString=document.getElementById("inputString").value;
+        var vowels=["a","e","i","o","u"];
+        var result="";
+        var result1="";
+
+        var inputArray=inputString.split("");
+        var inputUniqueArray=Array.from(new Set(inputArray));
+
+        for(var i=0;i<inputArray.length;i++){
+            for(var j=0;j<vowels.length;j++){
+                if(inputArray[i]==vowels[j]){
+                    if(result1.length==0)
+                        result1=result1+inputArray[i];
+                    else
+                        result1=result1+","+inputArray[i];
+                }
+            }
+        }
+
+        for(var i=0;i<inputUniqueArray.length;i++){
+            for(var j=0;j<vowels.length;j++){
+                if(inputUniqueArray[i]==vowels[j]){
+                    if(result.length==0)
+                        result=result+inputUniqueArray[i];
+                    else
+                        result=result+","+inputUniqueArray[i];
+                }
+            }
+        }
+        document.getElementById("result").innerHTML=result;
+        document.getElementById("result1").innerHTML=result1;
+    }
+</script>

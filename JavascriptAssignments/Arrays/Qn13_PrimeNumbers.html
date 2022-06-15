@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Arrays</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Prime Numbers</h4></div>
+        <div>Check console for output..</div>
+    </body>
+</html>
+<script>
+    var inputArray=[2,3,4,5,6,7,8,9,11];
+    var primeArray=[];
+    
+    console.log("Given Array: ");
+    console.log(inputArray);
+    console.log("Prime Numbers: ")
+
+
+    for(var i=0;i<inputArray.length;i++){
+        var flag=0;
+        for (j=2;j<inputArray[i];j++){
+            if(inputArray[i]%j==0){
+                    flag=1;
+                    break;
+            }
+        }
+        if(flag==0){
+            primeArray.push(inputArray[i]);
+        }
+    }
+
+    console.log(primeArray);
+    
+</script>

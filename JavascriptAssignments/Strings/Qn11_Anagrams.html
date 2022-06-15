@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Anagrams</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Anagrams</h4></div>
+        <div>
+            Enter string1: <span><input id="inputString1" type="text"></span>
+        </div>
+        <div>
+            Enter String2: <span><input id="inputString2" type="text"></span>
+        </div>
+        <div>
+            <button onclick="findAnagram()">Anagram or not</button>
+        </div>
+        <div>
+            <span id="result"></span>
+        </div>
+    </body>
+</html>
+<script>
+    function findAnagram(){
+        var inputString1=document.getElementById("inputString1").value;
+        var inputString2=document.getElementById("inputString2").value;
+
+        if(inputString1.length !== inputString2.length){
+            var result="Not an anagram (different lengths!!!)"
+        }
+        else{
+            var sortString1=inputString1.split('').sort().join('');
+            var sortString2=inputString2.split('').sort().join('');
+            if(sortString1==sortString2)
+                var result="Given strings are anagram";
+            else
+                var result="Not an anagram";
+        }
+        
+        document.getElementById("result").innerHTML=result;
+    }
+</script>

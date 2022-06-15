@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Index Value</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Index Value</h4></div>
+        <div>
+            <span>
+                Enter the word: 
+            </span>
+            <span><input id="inputString" type="text"></span>
+        </div>
+        <div>
+            <span>
+                Enter the index: 
+            </span>
+            <span><input id="inputIndex" type="text"></span>
+        </div>
+        <div>
+            <button onclick="result()">Find value</button>
+        </div>
+        <div>
+            <span id="result"></span>
+        </div>
+    </body>
+</html>
+<script>
+    function result(){
+        var inputString=document.getElementById("inputString").value;
+        var inputIndex=Number(document.getElementById("inputIndex").value);
+
+        var result=inputString.charAt(inputIndex);
+        document.getElementById("result").innerHTML="Character at index "+inputIndex.toString()+" is "+result;
+    }
+</script>

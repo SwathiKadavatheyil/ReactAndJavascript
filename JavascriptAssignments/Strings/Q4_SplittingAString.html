@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Splitting a String</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Splitting a string</h4></div>
+        <div><span>Enter the string: </span><span><input id="inputString" type="text"></span></div>
+        <div>
+            <span>Enter the start position to split: </span><span><input id="startIndex" type="text"></span>
+        </div>
+        <div>
+            <span>Enter the number of characters required in the splitted string: </span><span><input id="splitLength" type="text"></span>
+        </div>
+        <div style="color:blue">
+            <i>(For eg. if input string is "Details" and required output is "eta" <br/>
+            starting position will be "2" and number of characters will be "3")</i>
+        </div>
+        <div>
+            <button onclick="splitFunction()">Split String</button>
+        </div>
+        <div>
+            Resultant String: <span id="result"></span>
+        </div>
+    </body>
+</html>
+<script>
+    function splitFunction(){
+        var inputString=document.getElementById("inputString").value;
+        var startIndex=Number(document.getElementById("startIndex").value)-1;
+        var splitLength=Number(document.getElementById("splitLength").value)+startIndex;
+
+        var result=inputString.substring(startIndex,splitLength);
+        document.getElementById("result").innerHTML=result;
+    }
+</script>

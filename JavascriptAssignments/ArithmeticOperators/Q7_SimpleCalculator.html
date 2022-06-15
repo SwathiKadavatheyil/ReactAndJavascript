@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Simple Calculator</title>
+        <style>
+            div{
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Calculator</h4></div>
+        <div>Number 1: <input type="text" id="a"></div>
+        <div>Number 2: <input type="text" id="b"></div>
+        <div>
+            <button onclick="addition()" >+</button>
+            <button onclick="subtraction()" >-</button>
+            <button onclick="multiplication()" >*</button>
+            <button onclick="division()" >/</button>
+            <button onclick="modulus()" >%</button>
+        </div>
+       
+        <dvi>Result: <input type="text" id="result"></dvi>
+        
+    </body>
+</html>
+
+<script>
+
+    function addition(){
+        document.getElementById("result").value=Number(document.getElementById("a").value)+Number(document.getElementById("b").value)
+    }
+
+    function subtraction(){
+        document.getElementById("result").value=Number(document.getElementById("a").value)-Number(document.getElementById("b").value)
+    }
+
+    function multiplication(){
+        document.getElementById("result").value=Number(document.getElementById("a").value)*Number(document.getElementById("b").value)
+    }
+
+    function division(){
+        document.getElementById("result").value=Number(document.getElementById("a").value)/Number(document.getElementById("b").value)
+    }
+
+    function modulus(){
+        document.getElementById("result").value=Number(document.getElementById("a").value)%Number(document.getElementById("b").value)
+    }
+    
+</script>

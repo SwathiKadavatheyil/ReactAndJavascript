@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>HighestOccuringCharacter</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Highest Ocurring character</h4></div>
+        <div>
+            <span>Enter the sentance: </span>
+            <span><input id="inputString" type="text"></span>
+        </div>
+        <div>
+            <button onclick="findWord()">Find the Highest Ocurring character</button>
+        </div>
+        <div>
+            Output: <span id="result"></span>
+        </div>
+    </body>
+</html>
+<script>
+    function findWord(){
+        var inputString=document.getElementById("inputString").value;
+        var resultCountArray = new Array();
+        var result="";
+        var count=0;
+
+        var inputArray=inputString.split("");
+        var inputUniqueSet=new Set(inputArray);
+        var inputUniqueArray=Array.from(inputUniqueSet);
+
+        for(var i=0;i<inputUniqueArray.length;i++){
+            var count=0;
+            for(var j=0;j<inputArray.length;j++){
+                if(inputUniqueArray[i]==inputArray[j])
+                    count=count+1;
+            }
+            resultCountArray=resultCountArray.concat(count);
+        }
+        
+        var largest=resultCountArray[0];
+        for(var i=0;i<resultCountArray.length;i++){
+            if(resultCountArray[i]>largest){
+                largest=resultCountArray[i];
+            }        
+        }
+
+        
+            for(var i=0;i<resultCountArray.length;i++){
+                if(resultCountArray[i]==largest){
+                    result=result+inputUniqueArray[i];
+                }
+            
+        }
+
+
+        document.getElementById("result").innerHTML=result;
+    }
+</script>

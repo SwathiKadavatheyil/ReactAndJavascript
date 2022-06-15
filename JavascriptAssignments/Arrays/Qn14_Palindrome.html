@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Arrays</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Palindrome Numbers</h4></div>
+        <div>Check console for output..</div>
+    </body>
+</html>
+<script>
+    var inputArray=[22,3,4,21,45,77,34];
+    var palinArray=[];
+    
+    console.log("Given Array: ");
+    console.log(inputArray);
+    console.log("Palindrome Numbers: ")
+
+
+    for(var i=0;i<inputArray.length;i++){
+        if(inputArray[i].toString()==inputArray[i].toString().split('').reverse().join('').toString()){
+            palinArray.push(inputArray[i]);
+        }
+    }
+
+    console.log(palinArray);
+    
+</script>

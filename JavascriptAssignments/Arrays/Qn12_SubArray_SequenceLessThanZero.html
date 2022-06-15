@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Arrays</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Array into Sub Arrays with sequence of number which is less than zero</h4></div>
+        <div>Check console for output..</div>
+    </body>
+</html>
+<script>
+    var inputArray=[2,3,4,5,6,0,2,2,3,-1,4,5,3];
+    
+    console.log("Given Array: ");
+    console.log(inputArray);
+    console.log("Output arrays: ")
+
+    var noOfSubs=0;
+    for(var i=0;i<inputArray.length;i++){
+        if(inputArray[i]<=0)
+            noOfSubs=noOfSubs+1;
+    }
+
+    for(var i=0;i<noOfSubs;i++){
+        for(var j=0;j<inputArray.length;j++){
+            if(inputArray[j]<=0){
+                break;
+            }
+        }
+        console.log(inputArray.splice(0,j));
+        inputArray.splice(0,1);
+    }
+    
+</script>

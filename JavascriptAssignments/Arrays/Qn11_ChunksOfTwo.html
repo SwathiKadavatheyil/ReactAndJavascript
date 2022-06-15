@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Arrays</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Array into chunks of two</h4></div>
+        <div>Check console for output..</div>
+    </body>
+</html>
+<script>
+    var inputArray=[33,44,20,10];
+    var noOfChunks=inputArray.length/2;
+    
+    console.log("Given Array: ");
+    console.log(inputArray);
+    console.log("Output arrays: ")
+
+    for(var i=0;i<noOfChunks;i++){
+        console.log(inputArray.splice(0,2));
+    }
+</script>

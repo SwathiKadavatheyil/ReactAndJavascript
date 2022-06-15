@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Arrays</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h4>Printing elements of an array divisible by 5 or 2</h4></div>
+        <div>Check console for output..</div>
+    </body>
+</html>
+<script>
+    var inputArray=[33,44,11,33,44,555,11,11,45];
+    var resultArray=[];
+    
+    console.log("Given Array: ");
+    console.log(inputArray);
+    console.log("Output Array: ")
+
+    for(var i=0;i<inputArray.length;i++){
+        if(!(inputArray[i]%2)||!(inputArray[i]%5)){
+            resultArray.push(inputArray[i]);
+        }
+    }
+    console.log(resultArray);
+</script>

@@ -1,0 +1,115 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "rajesh",
+      "lastName": "H",
+      "email": "rajesh@gmail.com",
+      "password": "123456"
+    },
+    {
+      "firstName": "harry11111",
+      "lastName": "g",
+      "email": "harry@gmail.com",
+      "password": "12345",
+      "id": 2
+    },
+    {
+      "firstName": "harry11111",
+      "lastName": "g",
+      "email": "suresh@gmail.com",
+      "password": "12345",
+      "id": 3
+    },
+    {
+      "firstName": "salman2222",
+      "lastName": "salman2222",
+      "email": "salman@gmail.com",
+      "password": "12345",
+      "id": 4
+    },
+    {
+      "firstName": "salman2222",
+      "lastName": "salman2222",
+      "email": "salman@gmail.com",
+      "password": "12345",
+      "id": 5
+    },
+    {
+      "firstName": "asdfasdfasdf",
+      "lastName": "asdfadf",
+      "email": "adsfaf@gmail.com",
+      "password": "12345",
+      "id": 6
+    }
+  ],
+  "expense": [
+    {
+      "expenseName": "home purchase new",
+      "amount": 70000,
+      "paidBy": "Salman",
+      "date": "29/03/2022",
+      "id": 3
+    },
+    {
+      "expenseName": "laptop ",
+      "amount": "60000",
+      "paidBy": "mohan",
+      "date": "2022-04-07T04:50:10.813Z",
+      "id": 4
+    },
+    {
+      "expenseName": "home purchase",
+      "amount": 70000,
+      "paidBy": "Salman",
+      "date": "29/03/2022",
+      "id": 5
+    },
+    {
+      "expenseName": "rrr",
+      "amount": 70000,
+      "paidBy": "Salman",
+      "date": "29/03/2022",
+      "id": 6
+    }
+  ],
+  "bookDetails": [
+    {
+      "bookTitle": "radha",
+      "bookDesc": "abcdefg",
+      "author": "radhap",
+      "noOfBooks": "5",
+      "id": 1
+    },
+    {
+      "bookTitle": "premu",
+      "bookDesc": "abcdefg",
+      "author": "premu",
+      "noOfBooks": 3,
+      "id": 4
+    },
+    {
+      "bookTitle": "test",
+      "bookDesc": "abcd",
+      "author": "test",
+      "noOfBooks": 4,
+      "id": 6
+    }
+  ],
+  "elibraryusers": [
+    {
+      "id": 1,
+      "firstName": "rajesh",
+      "lastName": "H",
+      "email": "rajesh@gmail.com",
+      "password": "Rajesh_123"
+    },
+    {
+      "firstName": "swathi",
+      "lastName": "premu",
+      "email": "swathi@gmail.com",
+      "password": "Swathi_123",
+      "id": 2
+    }
+  ]
+}
