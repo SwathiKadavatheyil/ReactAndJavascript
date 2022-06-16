@@ -94,6 +94,13 @@
       "author": "test",
       "noOfBooks": 4,
       "id": 6
+    },
+    {
+      "bookTitle": "radhacheck",
+      "bookDesc": "abcd",
+      "author": "radha",
+      "noOfBooks": "5",
+      "id": 7
     }
   ],
   "elibraryusers": [
@@ -102,14 +109,48 @@
       "firstName": "rajesh",
       "lastName": "H",
       "email": "rajesh@gmail.com",
-      "password": "Rajesh_123"
+      "password": "Rajesh_123",
+      "role": "admin"
     },
     {
       "firstName": "swathi",
       "lastName": "premu",
       "email": "swathi@gmail.com",
       "password": "Swathi_123",
-      "id": 2
+      "id": 2,
+      "role": "member"
+    },
+    {
+      "firstName": "radha",
+      "lastName": "premu",
+      "email": "radha@gmail.com",
+      "password": "Radha_P312",
+      "role": "member",
+      "id": 3
+    },
+    {
+      "firstName": "premu",
+      "lastName": "kadavatheyil",
+      "email": "premu@gmail.com",
+      "password": "Premu_P312",
+      "role": "admin",
+      "id": 4
+    },
+    {
+      "firstName": "Varun",
+      "lastName": "Anoop",
+      "email": "varun@gmail.com",
+      "password": "Varun_P312",
+      "role": "member",
+      "id": 5
+    },
+    {
+      "firstName": "Anoop",
+      "lastName": "Shah",
+      "email": "anoop@gmail.com",
+      "password": "Varun_P312",
+      "role": "admin",
+      "id": 6
     }
   ]
 }
