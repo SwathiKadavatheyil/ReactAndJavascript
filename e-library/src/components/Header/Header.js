@@ -1,16 +1,22 @@
 import './Header.css';
-import {Link, link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
+import {useSelector,useDispatch} from 'react-redux';
+import Users from '../../services/users';
 
 function Header(){
 
   const navigate=useNavigate();
+  const dispatch=useDispatch();
+  const usersInfo = useSelector((state)=> state.users); 
+  const role=usersInfo.role;
 
     const onClickHandler=(event)=>{
-      sessionStorage.setItem("role","");
+        event.preventDefault();
+        Users.logout(dispatch);
         navigate('');
     }
-    if(sessionStorage.role=="admin"){
+    if(role==="admin"){
       return(<div>
         <nav className="navbar navbar-expand-lg" style={{backgroundColor:'rgb(60, 58, 58)'}}>
             <a className="navbar-brand" href="#"><i className="fa fa-university" aria-hidden="true"></i></a>
@@ -21,7 +27,7 @@ function Header(){
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" to="Home">Home</Link>
+                  <Link className="nav-link" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="About">About Library</Link>
@@ -39,16 +45,24 @@ function Header(){
                     <Link className="nav-link" to="AddBook">Add Book</Link>
                 </li>
               </ul>
-              <form className="form-inline my-2 my-lg-0">
-                <button className="btn my-2 my-sm-0 active" type="submit"><Link to="Register">Register Here</Link></button>
-                <button className="btn my-2 my-sm-0 active" type="submit"><Link to="Login">Login</Link></button>
-                <button className="btn my-2 my-sm-0 active" type="submit" onClick={onClickHandler}><Link to="FirstPage">Log out</Link></button>
-              </form>
+              
+                {!usersInfo.loginStatus &&
+                  <form className="form-inline my-2 my-lg-0">
+                    <button className="btn my-2 my-sm-0 active" type="submit"><Link to="Register">Register Here</Link></button>
+                    <button className="btn my-2 my-sm-0 active" type="submit"><Link to="Login">Login</Link></button>
+                  </form>
+                }
+                {usersInfo.loginStatus &&
+                   <form className="form-inline my-2 my-lg-0">
+                     <button className="btn my-2 my-sm-0 active" type="submit" onClick={onClickHandler}>Log out</button>
+                   </form>
+                }
+                
             </div>
           </nav>
     </div>);
     }
-    if(sessionStorage.role=="member"){
+    if(role==="member"){
       return(<div>
         <nav className="navbar navbar-expand-lg" style={{backgroundColor:'rgb(60, 58, 58)'}}>
             <a className="navbar-brand" href="#"><i className="fa fa-university" aria-hidden="true"></i></a>
@@ -59,7 +73,7 @@ function Header(){
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" to="Home">Home</Link>
+                  <Link className="nav-link" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="About">About Library</Link>
@@ -75,11 +89,17 @@ function Header(){
                 </li>
                 
               </ul>
-              <form className="form-inline my-2 my-lg-0">
-                <button className="btn my-2 my-sm-0 active" type="submit"><Link to="Register">Register Here</Link></button>
-                <button className="btn my-2 my-sm-0 active" type="submit"><Link to="Login">Login</Link></button>
-                <button className="btn my-2 my-sm-0 active" type="submit" onClick={onClickHandler}><Link to="FirstPage">Log out</Link></button>
-              </form>
+              {!usersInfo.loginStatus &&
+                  <form className="form-inline my-2 my-lg-0">
+                    <button className="btn my-2 my-sm-0 active" type="submit"><Link to="Register">Register Here</Link></button>
+                    <button className="btn my-2 my-sm-0 active" type="submit"><Link to="Login">Login</Link></button>
+                  </form>
+                }
+                {usersInfo.loginStatus &&
+                   <form className="form-inline my-2 my-lg-0">
+                     <button className="btn my-2 my-sm-0 active" type="submit" onClick={onClickHandler}>Log out</button>
+                   </form>
+                }
             </div>
           </nav>
     </div>);
@@ -95,7 +115,7 @@ function Header(){
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" to="Home">Home</Link>
+                  <Link className="nav-link" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="About">About Library</Link>
@@ -107,6 +127,19 @@ function Header(){
                     <Link className="nav-link" to="PriceCard">Price Card</Link>
                 </li>
                 </ul>
+
+                {!usersInfo.loginStatus &&
+                  <form className="form-inline my-2 my-lg-0">
+                    <button className="btn my-2 my-sm-0 active" type="submit"><Link to="Register">Register Here</Link></button>
+                    <button className="btn my-2 my-sm-0 active" type="submit"><Link to="Login">Login</Link></button>
+                  </form>
+                }
+                {usersInfo.loginStatus &&
+                   <form className="form-inline my-2 my-lg-0">
+                     <button className="btn my-2 my-sm-0 active" type="submit" onClick={onClickHandler}>Log out</button>
+                   </form>
+                }
+
             </div>
           </nav>
     </div>);

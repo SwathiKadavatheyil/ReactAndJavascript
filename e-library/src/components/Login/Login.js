@@ -7,6 +7,8 @@ import booksicon from '../../assets/booksicon.png';
 import usericon from '../../assets/usericon.png';
 import keyicon from '../../assets/keyicon.png';
 import axios from 'axios';
+import {useDispatch} from 'react-redux';
+import Users from '../../services/users';
 
 function Login(){
     const navigate=useNavigate();
@@ -28,18 +30,23 @@ function Login(){
       })
     }
 
+    const dispatch=useDispatch();
+
     const onSubmitHandler=(event)=>{
       event.preventDefault(); 
+      
       setValidation({
         ...getValidation,email:!emailValidation(getForm.email)?"please provide correct email":'',
         password:!passwordValidation(getForm.password)?"Please provide the correct password":''
       });
       if(emailValidation(getForm.email) && passwordValidation(getForm.password)){
+        
         axios.get('http://localhost:3000/elibraryusers').then((response)=>{
         //userlist=response.data;
         for(var i=0;i<response.data.length;i++){
           if(response.data[i].email === getForm.email && response.data[i].password === getForm.password){
-            navigate('/Home');
+            Users.loadUsers(dispatch,getForm.email,getForm.password,response.data[i].role);
+            navigate('/');
             break;
           }
           else{
@@ -70,10 +77,12 @@ function Login(){
         <div className="col-4"></div>
         <div className="col-4 heading" style={{backgroundColor:"white"}}>
           <table>
+            <tbody>
             <tr>
               <td><img src={booksicon} style={{height:"100px", width:"100px"}}/></td>
               <td style={{color:"orange"}}>LIBRARY Management System</td>
             </tr>
+            </tbody>
           </table>
         </div>
         <div className="col-4"></div>

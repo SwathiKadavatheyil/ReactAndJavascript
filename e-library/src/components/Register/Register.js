@@ -12,14 +12,16 @@ function Register(){
       firstName:'',
       lastName:'',
       email:'',
-      password:''
+      password:'',
+      role:''
     });
 
     const[getValidation,setValidation]=useState({
       firstName:'',
       lastName:'',
       email:'',
-      password:''
+      password:'',
+      role:''
     });
 
     const onChangeHandler=(event)=>{
@@ -35,16 +37,18 @@ function Register(){
         firstName:!alphabetValidation(getForm.firstName)?"Required, Only alphabets allowed":'',
         lastName:!alphabetValidation(getForm.lastName)?"Required, Only alphabets allowed":'',
         email:!emailValidation(getForm.email)?"Please provide correct email":'',
-        password:!passwordValidation(getForm.password)?"Please provide the correct password":''
+        password:!passwordValidation(getForm.password)?"Please provide the correct password":'',
+        role:!alphabetValidation(getForm.role)?"Required":''
       })
 
-      if(emailValidation(getForm.email) && passwordValidation(getForm.password) && alphabetValidation(getForm.firstName)&& alphabetValidation(getForm.lastName)){
+      if(emailValidation(getForm.email) && passwordValidation(getForm.password) && alphabetValidation(getForm.firstName)&& alphabetValidation(getForm.lastName)&&(alphabetValidation(getForm.role))){
         alert("Successfully registered.. Kindly Login to continue");
         axios.post('http://localhost:3000/elibraryusers',{
           firstName:getForm.firstName,
           lastName:getForm.lastName,
           email:getForm.email,
-          password:getForm.password
+          password:getForm.password,
+          role:getForm.role
         
        }).then(()=>{
         navigate('/Login');
@@ -78,14 +82,14 @@ function Register(){
                       <div className="form-group">
                           <label id="firstName" className="regLabels">First Name</label>
                           <input type="text" value={getForm.firstName} onChange={onChangeHandler} className="form-control" id="firstName" name="firstName" placeholder="First Name"/>
-                          {getValidation.firstName && <div style={{fontSize:"10px"}} class="alert alert-danger" role="alert">
+                          {getValidation.firstName && <div style={{fontSize:"10px"}} className="alert alert-danger" role="alert">
                           {getValidation.firstName}
                           </div>}
                       </div>
                       <div className="form-group">
                           <label id="lastName" className="regLabels">Last Name</label>
                           <input type="text" value={getForm.lastName} onChange={onChangeHandler} className="form-control" id="lastName" name="lastName" placeholder="Last Name"/>
-                          {getValidation.lastName && <div style={{fontSize:"10px"}} class="alert alert-danger" role="alert">
+                          {getValidation.lastName && <div style={{fontSize:"10px"}} className="alert alert-danger" role="alert">
                           {getValidation.lastName}
                           </div>}
                       </div>
@@ -94,16 +98,27 @@ function Register(){
                         <label htmlFor="emailAddress" className="regLabels">Email address</label>
                         <input type="email" value={getForm.email} onChange={onChangeHandler} className="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email"/>
                         <p style={{fontSize:"10px"}}><i>Your email will be the username</i></p>
-                        {getValidation.email && <div style={{fontSize:"10px"}} class="alert alert-danger" role="alert">
+                        {getValidation.email && <div style={{fontSize:"10px"}} className="alert alert-danger" role="alert">
                         {getValidation.email}
                         </div>}
                       </div>
                       <div className="form-group">
                         <label htmlFor="password1" className="regLabels">Password</label>
                         <input type="password" value={getForm.password} onChange={onChangeHandler} className="form-control" id="password" name="password" placeholder="Enter Password"/>
-                        {getValidation.password && <div style={{fontSize:"10px"}} class="alert alert-danger" role="alert">
+                        {getValidation.password && <div style={{fontSize:"10px"}} className="alert alert-danger" role="alert">
                         {getValidation.password}
-                  </div>}
+                      </div>}
+                      <div className="form-group">
+                        <label htmlFor="role" className="regLabels">Role</label><br/>
+                        {/* <input type="radio" value={getForm.role} onChange={onChangeHandler} className="form-control" id="role" name="role"/> */}
+                        <label htmlFor="role">Admin</label>
+                        <input type="radio" id="admin" name="role" onChange={onChangeHandler} value="admin"/>
+                        <label htmlFor="role">Member</label>
+                        <input type="radio" id="member" name="role" onChange={onChangeHandler} value="member"/>
+                        {getValidation.role && <div style={{fontSize:"10px"}} className="alert alert-danger" role="alert">
+                        {getValidation.role}
+                         </div>}
+                      </div>
                       </div>
                       <div align="center">
                         <button id="signUp" onSubmit={onSubmitHandler} onClick={onSubmitHandler} type="submit" className="btn btn-primary">Sign Up</button>

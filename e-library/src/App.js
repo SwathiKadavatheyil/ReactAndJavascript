@@ -2,7 +2,6 @@
 import './App.css';
 import './assets/font-awesome/css/font-awesome.min.css';
 import Header from './components/Header/Header';
-import FirstPage from './components/FirstPage/FirstPage';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Rules from './components/Rules/Rules';
@@ -20,8 +19,7 @@ function App() {
       <BrowserRouter>
       <Header/>
       <Routes>
-      <Route path='' element={<FirstPage/>}/>
-      <Route path='/Home' element={<Home/>} />  
+      <Route path='' element={<Home/>} />  
       <Route path='/register' element={<Register/>} />
       <Route path='/rules' element={<Rules/>}/>
       <Route path='/pricecard' element={<PriceCard/>}/>

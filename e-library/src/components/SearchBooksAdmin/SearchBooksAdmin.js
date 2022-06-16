@@ -54,12 +54,20 @@ function SearchBooksAdmin(){
 
   const onChangeSearchHandler=(event)=>{
     setSearch(event.target.value);
+    axios.get('http://localhost:3000/bookDetails').then((response)=>{
+    console.log(response);
+    setList(response.data)
+    }).catch((error)=>{
+    console.log(error);
+    });
   }
 
   const searchFilter=(event)=>{
     event.preventDefault();
+    
     let details = getList.filter((obj)=>{
-      return obj.bookTitle.toUpperCase() === getSearch.toUpperCase() ; 
+      return obj.bookTitle.toUpperCase().includes(getSearch.toUpperCase());
+      //return obj.bookTitle.toUpperCase() === getSearch.toUpperCase() ; 
     })
     setList(details);
   }
