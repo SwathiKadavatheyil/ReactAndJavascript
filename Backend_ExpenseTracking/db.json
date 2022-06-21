@@ -1,0 +1,63 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Swathi",
+      "lastName": "Premu",
+      "email": "swathi@gmail.com",
+      "password": "Swathi_P312"
+    },
+    {
+      "firstName": "Radha",
+      "lastName": "Balu",
+      "email": "radha@gmail.com",
+      "password": "Radha_P312",
+      "id": 2
+    },
+    {
+      "firstName": "anoop",
+      "lastName": "shah",
+      "email": "anoop@gmail.com",
+      "password": "Anoop_P312",
+      "id": 3
+    }
+  ],
+  "expense": [
+    {
+      "expenseTitle": "laptop",
+      "expenseNotes": "for office",
+      "expenseCategory": "Others",
+      "expenseAmount": "1000",
+      "expensePaidBy": "AccountTransfer",
+      "expenseDate": "2022-06-17",
+      "id": 2
+    },
+    {
+      "expenseTitle": "abc",
+      "expenseNotes": "groceries",
+      "expenseCategory": "Groceries",
+      "expenseAmount": "122",
+      "expensePaidBy": "Cash",
+      "expenseDate": "2022-06-15",
+      "id": 3
+    },
+    {
+      "expenseTitle": "party",
+      "expenseNotes": "birthday party",
+      "expenseCategory": "Restaurant",
+      "expenseAmount": "5000",
+      "expensePaidBy": "UPI",
+      "expenseDate": "2022-06-19",
+      "id": 4
+    },
+    {
+      "expenseTitle": "shopping",
+      "expenseNotes": "simply shopping",
+      "expenseCategory": "Outing",
+      "expenseAmount": "3000",
+      "expensePaidBy": "Cash",
+      "expenseDate": "2022-06-17",
+      "id": 5
+    }
+  ]
+}

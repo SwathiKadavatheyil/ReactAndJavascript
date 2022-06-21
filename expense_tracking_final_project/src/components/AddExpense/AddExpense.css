@@ -1,0 +1,20 @@
+#addExpense{
+    border-radius: 20px;
+     padding-left: 40px;
+     padding-right: 40px;
+     font-size:medium;
+     
+}
+
+.form-group{
+    display: flex;
+    justify-content: left
+}
+
+label{
+    width:200px;
+}
+
+.form-control,#expenseCategory,#expensePaidBy{
+    width: 300px;
+}

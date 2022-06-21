@@ -1,0 +1,13 @@
+#con{
+    border:1px solid;
+    border-color: green;
+    height:200px;
+    width:300px;
+    margin-left: 50px;
+    text-align: center;
+    padding:20px;
+}
+.con_icon{
+    height:40px;
+    width:40px;
+}
