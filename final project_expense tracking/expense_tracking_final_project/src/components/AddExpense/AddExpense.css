@@ -6,15 +6,15 @@
      
 }
 
-.form-group{
+.addDiv{
     display: flex;
     justify-content: left
 }
 
-label{
+.addExLabel{
     width:200px;
 }
 
-.form-control,#expenseCategory,#expensePaidBy{
+.form-control-add,#expenseCategory,#expensePaidBy{
     width: 300px;
 }

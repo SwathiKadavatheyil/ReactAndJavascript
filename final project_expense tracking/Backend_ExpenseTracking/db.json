@@ -20,6 +20,13 @@
       "email": "anoop@gmail.com",
       "password": "Anoop_P312",
       "id": 3
+    },
+    {
+      "firstName": "Nivedh",
+      "lastName": "Raju",
+      "email": "nivedh@gmail.com",
+      "password": "Nivedh_P312",
+      "id": 4
     }
   ],
   "expense": [
@@ -33,15 +40,6 @@
       "id": 2
     },
     {
-      "expenseTitle": "abc",
-      "expenseNotes": "groceries",
-      "expenseCategory": "Groceries",
-      "expenseAmount": "122",
-      "expensePaidBy": "Cash",
-      "expenseDate": "2022-06-15",
-      "id": 3
-    },
-    {
       "expenseTitle": "party",
       "expenseNotes": "birthday party",
       "expenseCategory": "Restaurant",
@@ -53,11 +51,20 @@
     {
       "expenseTitle": "shopping",
       "expenseNotes": "simply shopping",
-      "expenseCategory": "Outing",
+      "expenseCategory": "Others",
       "expenseAmount": "3000",
       "expensePaidBy": "Cash",
       "expenseDate": "2022-06-17",
       "id": 5
+    },
+    {
+      "expenseTitle": "plants",
+      "expenseNotes": "garden",
+      "expenseCategory": "Others",
+      "expenseAmount": "1000",
+      "expensePaidBy": "AccountTransfer",
+      "expenseDate": "2022-06-22",
+      "id": 6
     }
   ]
 }

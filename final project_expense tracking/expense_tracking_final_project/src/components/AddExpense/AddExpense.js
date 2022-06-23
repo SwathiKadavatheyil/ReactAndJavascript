@@ -1,5 +1,5 @@
 import './AddExpense.css';
-import {Link,useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {useState} from 'react';
 import {numberValidataion,alphanumericFiftyValidation,alphanumericOnefiftyValidation} from '../Validations';
 import axios from 'axios';
@@ -74,22 +74,22 @@ function AddExpense(){
         </div> */}
         <div className="col-12" style={{display:"flex"}}>
         <form id="addExpenseForm"> 
-            <div className="form-group">
-              <label name="expenseTitle">Expense Title:</label>
-              <input type="text" value={getExpense.expenseTitle} onChange={onChangeHandler} className="form-control" id="expenseTitle" name="expenseTitle"/>
+            <div className="form-group addDiv">
+              <label class="addExLabel" name="expenseTitle">Expense Title:</label>
+              <input type="text" value={getExpense.expenseTitle} onChange={onChangeHandler} className="form-control form-control-add" id="expenseTitle" name="expenseTitle"/>
               {getValidation.expenseTitle && <div style={{fontSize:"10px"}} className="alert alert-danger" role="alert">
               {getValidation.expenseTitle}
               </div>}
             </div>
-            <div className="form-group">
-              <label name="expenseNotes">Expense Notes:</label>
-              <input type="text" value={getExpense.expenseNotes} onChange={onChangeHandler} className="form-control" id="expenseNotes" name="expenseNotes"/>
+            <div className="form-group addDiv">
+              <label class="addExLabel" name="expenseNotes">Expense Notes:</label>
+              <input type="text" value={getExpense.expenseNotes} onChange={onChangeHandler} className="form-control form-control-add" id="expenseNotes" name="expenseNotes"/>
               {getValidation.expenseNotes && <div style={{fontSize:"10px"}} className="alert alert-danger" role="alert">
               {getValidation.expenseNotes}
               </div>}
             </div>
-            <div className="form-group">
-                <label name="expenseCategory">Expense Category:</label>
+            <div className="form-group addDiv">
+                <label class="addExLabel" name="expenseCategory">Expense Category:</label>
                 <select name="expenseCategory" id="expenseCategory" value={getExpense.expenseCategory} onChange={onChangeHandler}>
                     <option value="">Select</option>
                     <option value="Groceries">Groceries</option>
@@ -103,16 +103,16 @@ function AddExpense(){
                 {getValidation.expenseCategory}
                 </div>}
             </div>
-            <div className="form-group">
-              <label name="expenseAmount">Expense Amount:</label>
-              <input type="text" value={getExpense.expenseAmount} onChange={onChangeHandler} className="form-control" id="expenseAmount" name="expenseAmount"/>
+            <div className="form-group addDiv">
+              <label class="addExLabel" name="expenseAmount">Expense Amount:</label>
+              <input type="text" value={getExpense.expenseAmount} onChange={onChangeHandler} className="form-control form-control-add" id="expenseAmount" name="expenseAmount"/>
               {getValidation.expenseAmount && <div style={{fontSize:"10px"}} class="alert alert-danger" role="alert">
               {getValidation.expenseAmount}
               </div>}
             </div>
            
-            <div className="form-group">
-                <label name="expensePaidBy">Expense Paid By:</label>
+            <div className="form-group addDiv">
+                <label class="addExLabel" name="expensePaidBy">Expense Paid By:</label>
                 <select name="expensePaidBy" id="expensePaidBy"onChange={onChangeHandler}>
                     <option value="">Select</option>
                     <option value="Cash">Cash</option>
@@ -125,14 +125,14 @@ function AddExpense(){
                 </div>}
             </div>
 
-            <div className="form-group">
-                <label name="expenseDate">Expense Date:</label>
-                <input type="date" value={getExpense.expenseDate} onChange={onChangeHandler} className="form-control" id="expenseDate" name="expenseDate"/>
+            <div className="form-group addDiv">
+                <label class="addExLabel" name="expenseDate">Expense Date:</label>
+                <input type="date" value={getExpense.expenseDate} onChange={onChangeHandler} className="form-control form-control-add" id="expenseDate" name="expenseDate"/>
                 {getValidation.expenseDate && <div style={{fontSize:"10px"}} className="alert alert-danger" role="alert">
                 {getValidation.expenseDate}
                 </div>}
             </div>
-            <div className="form-group">
+            <div className="form-group addDiv">
               <label>  </label>
             <div>
                 <button id="addExpense" onClick={onAddHandler} type="submit" className="btn btn-primary">Add Expense</button>
