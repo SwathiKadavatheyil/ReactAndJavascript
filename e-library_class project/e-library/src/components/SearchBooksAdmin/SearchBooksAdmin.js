@@ -40,10 +40,13 @@ function SearchBooksAdmin(){
   },[])
 
   const onDeleteHandler=(index)=>{
+    setIndex(index);
+  }
+  const onDeleteSubmitHandler=(event)=>{
     let bookDetails = [...getList];
-    let id=String(bookDetails[index].id);
+    let id=String(bookDetails[getIndex].id);
     axios.delete('http://localhost:3000/bookDetails/'+id).then(()=>{
-      bookDetails.splice(index,1);
+      bookDetails.splice(getIndex,1);
       setList(bookDetails);
     }).catch(()=>{
 
@@ -185,7 +188,7 @@ function SearchBooksAdmin(){
                             <td>{obj.author}</td>
                             <td>{obj.noOfBooks}</td>
                             <td><i  data-toggle="modal" onClick={()=>onEditHandler(index)} data-target="#edit" className="fa fa-pencil-square-o" aria-hidden="true"></i></td>
-                            <td><i className="fa fa-trash" onClick={()=>onDeleteHandler(index)} aria-hidden="true"></i></td>
+                            <td><i data-toggle="modal" data-target="#deleteModal" className="fa fa-trash" onClick={()=>onDeleteHandler(index)} aria-hidden="true"></i></td>
                           </tr>
 
                            )
@@ -251,6 +254,28 @@ function SearchBooksAdmin(){
         <div className="modal-footer">
           <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="button" data-dismiss="modal" onClick={onEditSubmitHandler} className="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div className="modal fade" id="deleteModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div className="modal-dialog" role="document">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div className="modal-body">
+          Are you sure you want to delete?
+        </div>
+           
+        <div className="modal-footer">
+          <button type="button" className="btn btn-secondary" data-dismiss="modal">No</button>
+          <button type="button" data-dismiss="modal" onClick={onDeleteSubmitHandler} className="btn btn-primary">Yes</button>
         </div>
       </div>
     </div>

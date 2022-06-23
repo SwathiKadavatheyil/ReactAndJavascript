@@ -36,11 +36,16 @@ function Dashboard(){
     });
   },[])
 
+
   const onDeleteHandler=(index)=>{
+    setIndex(index);
+  }
+
+  const onDeleteSubmitHandler=(event)=>{
     let expenseDetails = [...getList];
-    let id=String(expenseDetails[index].id);
+    let id=String(expenseDetails[getIndex].id);
     axios.delete('http://localhost:3000/expense/'+id).then(()=>{
-      expenseDetails.splice(index,1);
+      expenseDetails.splice(getIndex,1);
       setList(expenseDetails);
     }).catch(()=>{
 
@@ -180,7 +185,7 @@ function Dashboard(){
                             <td>{obj.expensePaidBy}</td>
                             <td>{obj.expenseDate}</td>
                             <td><i  data-toggle="modal" onClick={()=>onEditHandler(index)} data-target="#edit" className="fa fa-pencil-square-o" aria-hidden="true"></i></td>
-                            <td><i className="fa fa-trash" onClick={()=>onDeleteHandler(index)} aria-hidden="true"></i></td>
+                            <td><i className="fa fa-trash" data-toggle="modal" data-target="#deleteModal" onClick={()=>onDeleteHandler(index)} aria-hidden="true"></i></td>
                           </tr>
 
                            )
@@ -199,7 +204,7 @@ function Dashboard(){
     <div className="modal-dialog" role="document">
       <div className="modal-content">
         <div className="modal-header">
-          <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 className="modal-title" id="exampleModalLabel">Edit Expense</h5>
           <button type="button" className="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -277,7 +282,29 @@ function Dashboard(){
       </div>
     </div>
   </div> 
+
+
+  <div className="modal fade" id="deleteModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div className="modal-dialog" role="document">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title" id="exampleModalLabel">Delete</h5>
+          <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div className="modal-body">
+          Are you sure you want to delete?
+        </div>
+           
+        <div className="modal-footer">
+          <button type="button" className="btn btn-secondary" data-dismiss="modal">No</button>
+          <button type="button" data-dismiss="modal" onClick={onDeleteSubmitHandler} className="btn btn-primary">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
     );
 }
 

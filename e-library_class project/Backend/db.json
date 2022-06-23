@@ -87,20 +87,6 @@
       "author": "premu",
       "noOfBooks": 3,
       "id": 4
-    },
-    {
-      "bookTitle": "test",
-      "bookDesc": "abcd",
-      "author": "test",
-      "noOfBooks": 4,
-      "id": 6
-    },
-    {
-      "bookTitle": "radhacheck",
-      "bookDesc": "abcd",
-      "author": "radha",
-      "noOfBooks": "5",
-      "id": 7
     }
   ],
   "elibraryusers": [

@@ -31,24 +31,6 @@
   ],
   "expense": [
     {
-      "expenseTitle": "laptop",
-      "expenseNotes": "for office",
-      "expenseCategory": "Others",
-      "expenseAmount": "1000",
-      "expensePaidBy": "AccountTransfer",
-      "expenseDate": "2022-06-17",
-      "id": 2
-    },
-    {
-      "expenseTitle": "party",
-      "expenseNotes": "birthday party",
-      "expenseCategory": "Restaurant",
-      "expenseAmount": "5000",
-      "expensePaidBy": "UPI",
-      "expenseDate": "2022-06-19",
-      "id": 4
-    },
-    {
       "expenseTitle": "shopping",
       "expenseNotes": "simply shopping",
       "expenseCategory": "Others",
@@ -65,6 +47,33 @@
       "expensePaidBy": "AccountTransfer",
       "expenseDate": "2022-06-22",
       "id": 6
+    },
+    {
+      "expenseTitle": "for deleting",
+      "expenseNotes": "zcxzcz",
+      "expenseCategory": "Snacks",
+      "expenseAmount": "1000",
+      "expensePaidBy": "Cash",
+      "expenseDate": "2022-06-14",
+      "id": 7
+    },
+    {
+      "expenseTitle": "dress",
+      "expenseNotes": "dress",
+      "expenseCategory": "Others",
+      "expenseAmount": "233",
+      "expensePaidBy": "Card",
+      "expenseDate": "2022-06-17",
+      "id": 8
+    },
+    {
+      "expenseTitle": "medicine",
+      "expenseNotes": "simlpy",
+      "expenseCategory": "Groceries",
+      "expenseAmount": "244",
+      "expensePaidBy": "Cash",
+      "expenseDate": "2022-06-24",
+      "id": 9
     }
   ]
 }
